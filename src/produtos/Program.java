@@ -3,28 +3,35 @@ package produtos;
 import java.awt.print.Printable;
 
 public class Program {
+	
+	//Neste programa estamos tentando encontrar o menor preço numa lista de carros, inciando o código de maneira simples e aumentando a complexidade de resolução a cada dia e commit.
 
 	public static void main(String[] args) {
 		
-		double precos[] = new double[5];
-		precos[0] = 1000000;
-		precos[1] = 46000;
-		precos[2] = 16000;
-		precos[3] = 46000;
-		precos[4] = 17000;
+		Produto produtos[] = { 
+				new Produto("Lamborghini", 1000000),
+				new Produto("Jipe", 46000),
+				new Produto("Brasilia", 16000),
+				new Produto("Smart", 460000),
+				new Produto("Fusca", 17000)
+		};
 		
-		int maisBarato = 0;
 		
-		for(int atual=0; atual<=4; atual++) {
-			if(precos[atual] < precos[maisBarato]) {
-				maisBarato = atual;
-			}
-			
-		}
+		int maisBarato = buscaMenor(produtos);
 		System.out.println(maisBarato);
-		System.out.print("O carro mais barato custa " + precos[maisBarato]);
+		System.out.print("O carro " + produtos[maisBarato].getNome() + "é o mais barato e custa " + produtos[maisBarato].getPreco());
 		
 
+	}
+	
+	public static int buscaMenor(Produto[] produtos) {
+		int maisBarato = 0;
+		for(int atual = 0; atual <= 4; atual++) {
+			if(produtos[atual].getPreco() < produtos[maisBarato].getPreco()) {
+				maisBarato = atual;
+			}
+		}
+		return maisBarato;
 	}
 
 }
