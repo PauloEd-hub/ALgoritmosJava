@@ -22,17 +22,17 @@ public class Program {
 		};
 		
 		
-		int maisBarato = buscaMenor(produtos, 4);
+		int maisBarato = buscaMenor(produtos, 0, 4);
 		System.out.println(maisBarato);
 		System.out.print("O carro " + produtos[maisBarato].getNome() + "é o mais barato e custa " + produtos[maisBarato].getPreco());
 		
 
 	}
 	
-	public static int buscaMenor(Produto[] produtos, int termino) {
-		int maisBarato = 0;
+	public static int buscaMenor(Produto[] produtos,int inicio, int termino) {
+		int maisBarato = inicio;
 //		int termino = produtos.length - 1;
-		for(int atual = 0; atual <= termino; atual++) {
+		for(int atual = inicio; atual <= termino; atual++) {
 			if(produtos[atual].getPreco() < produtos[maisBarato].getPreco()) {
 				maisBarato = atual;
 			}
