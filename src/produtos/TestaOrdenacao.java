@@ -36,11 +36,11 @@ public class TestaOrdenacao {
 			return maisBarato;
 	}
 	
-	private static void ordena(Produto[] produtos, int quaqntidadeDeElementos) {
-		for(int atual = 0; atual < produtos.length - 1; atual++) {
+	private static void ordena(Produto[] produtos, int quantidadeDeElementos) {
+		for(int atual = 0; atual < quantidadeDeElementos - 1; atual++) {
 			
 			System.out.println("Estou na casinha " + atual);
-			int menor = buscaMenor(produtos, atual, quaqntidadeDeElementos - 1);
+			int menor = buscaMenor(produtos, atual, quantidadeDeElementos - 1);
 			
 			System.out.println("Trocando " + atual + " com o " + menor);
 			
